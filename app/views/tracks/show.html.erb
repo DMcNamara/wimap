@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @track.user_id %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @track.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @track.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>
