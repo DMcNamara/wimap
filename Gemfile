@@ -36,6 +36,9 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'rails_12factor'
+gem 'cancan'
+gem 'bootstrap-wysihtml5-rails'
+gem 'haml'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
