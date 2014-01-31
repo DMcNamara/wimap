@@ -19,6 +19,7 @@ Wimap::Application.routes.draw do
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
       resources :routers, :only => [:index, :create]
+      resources :tracks,  :only => [:index, :create]
     end # <-- v1 -->
   end # <-- api -->
 
