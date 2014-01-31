@@ -1,10 +1,10 @@
 .container{:id => "header"}
   .header
     %ul.nav.nav-pills.pull-right
-      %li <a href="#">Home</a></li>
-      %li <a href="#">About</a>
-      %li <a href="#">Contact</a>
+      %li= link_to("Home",root_path)
+      %li= link_to("About",root_path+"#about",:anchor=>"about")
+      %li= link_to("Contact",root_path+"#contact", :anchor=>"contact")
       %li= link_to('<i class="fa fa-twitter fa-2x"></i>'.html_safe, "https://twitter.com/WiMapNav", :target => "_blank")
       %li= link_to('<i class="fa fa-facebook-square fa-2x"></i>'.html_safe, "https://www.facebook.com/WiMapNav", :target => "_blank")
-    %h2.text-muted WiMap
+    %img(src="/assets/logothin128t.png")
 

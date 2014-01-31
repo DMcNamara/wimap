@@ -1,27 +1,26 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 .jumbotron
   .h1 Indoor Navigation for the Modern Age
-  %p.lead It really whips Llama's ass.
-  %p <a class="btn btn-lg btn-success" href="#" role="button">Contact Us</a>
+  %p.lead Where will it take you?
+  %p=link_to("Contact Us", root_path+"#contact", {:anchor => "anchor",:class => "btn btn-lg btn-success"})
 
 
 .row.marketing
   .col-lg-6
-    .h4 Super Sexy
-    %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+    .h4=link_to("What is WiMap?", root_path,{:anchor=>"about", :name=>"about"})
+    %p WiMap adapts the convenience of outdoor location services to an interior setting for the benefit of both proprietors and customers alike. Detailed mapping and turn-by-turn navigation coupled with contextual site information allow the user to navigate the area with ease and ensure a positive experience. Conversely, the integration of a feedback system provides the venue’s owner with invaluable data on customers’ experiences allowing them to streamline their business.
+    %p Our team seeks to bring low power always-on interior location services to venues without requiring any kind of special hardware modifications. Using freely available metrics and an advanced processing backend we bring contextual information and the same kind of turn-by-turn navigation previously limited to GPS or low-accuracy network location services! 
+    %p The method and execution are both highly adaptable, incorporating the branding of our customers and providing only the most relevant data. With the ability to create an entirely new anonymous user system or simply hook into an existing service we are ready to roll out alongside your existing technology and provide you the data you currently pay analysts to manufacture. 
 
-    .h4 Such Nav
-    %p Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
+    .h4 Our Progress
+    %p WiMap is in the early planning and testing stages of our product development. With funding procured from contests of innovation and jumpstart/seed capital we are beginning development in earnest and hope to have a prototype fully functional within the next few weeks. Stay tuned in for progress updates and information!
+    %img(src="/assets/about_cropped.png")
 
-    .h4 Winner of a Large Check</h4>
-    %p Maecenas sed diam eget risus varius blandit sit amet non magna.
+    .h4 Who we are
+    %p We are a group of Northeastern Students with backgrounds in engineering, science, and business. Our team is small but effective, with the expertise required for both frontend and backend development. WiMap is still too small to warrant expansion of the team or even official positions.
 
   .col-lg-6
-    .h4 Voted Most Likely to Tame Lions in High School</h4>
-    %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+    .h4=link_to("Contact", root_path, {:anchor=>"contact", :name=>"contact"})
+    %p Questions or Comments may be directed to 
+    %br wimap@wimapnav.com
 
-    .h4 Subheading
-    %p Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
-
-    .h4 Subheading
-    %p Maecenas sed diam eget risus varius blandit sit amet non magna.
