@@ -1,0 +1,32 @@
+%h1 Listing routers
+%table
+  %thead
+    %tr
+      %th Site
+      %th X
+      %th Y
+      %th Z
+      %th Ssid
+      %th Uid
+      %th Power
+      %th Frequency
+      %th
+      %th
+      %th
+  %tbody
+    - @routers.each do |router|
+      %tr
+        %td= router.site_id
+        %td= router.x
+        %td= router.y
+        %td= router.z
+        %td= router.ssid
+        %td= router.uid
+        %td= router.power
+        %td= router.frequency
+        %td= link_to 'Show', router
+        %td= link_to 'Edit', edit_router_path(router)
+        %td= link_to 'Destroy', router, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Router', new_router_path
+%br= link_to "Destroy All", destroy_all_routers_path, :data => { :confirm => "Are you sure?" }, :method => :get

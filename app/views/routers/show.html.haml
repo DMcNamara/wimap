@@ -1,0 +1,29 @@
+%p#notice= notice
+%p
+  %strong Site:
+  = @router.site_id
+%p
+  %strong X:
+  = @router.x
+%p
+  %strong Y:
+  = @router.y
+%p
+  %strong Z:
+  = @router.z
+%p
+  %strong Ssid:
+  = @router.ssid
+%p
+  %strong Uid:
+  = @router.uid
+%p
+  %strong Power:
+  = @router.power
+%p
+  %strong Frequency:
+  = @router.frequency
+  
+= link_to 'Edit', edit_router_path(@router)
+|
+\#{link_to 'Back', routers_path}

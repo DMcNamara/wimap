@@ -61,6 +61,12 @@ class RoutersController < ApplicationController
     end
   end
 
+  def destroy_all
+    Router.destroy_all
+    flash[:notice] = "You have removed all results!"
+    redirect_to routers_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_router
@@ -69,6 +75,6 @@ class RoutersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def router_params
-      params.require(:router).permit(:site_id, :x, :y, :z, :ssid, :uid, :power)
+      params.require(:router).permit(:site_id, :x, :y, :z, :ssid, :uid, :power, :frequency)
     end
 end

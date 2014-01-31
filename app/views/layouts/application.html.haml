@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Wimap
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    %link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", rel: "stylesheet"}/
+  %body
+    #main.container
+      = render "layouts/header"
+      %p.notice= notice
+      %p.alert= alert
+      = yield
+      .footer
+        %p © WiMap 2014

@@ -1,7 +1,11 @@
 Wimap::Application.routes.draw do
   resources :sites
 
-  resources :routers
+  resources :routers do
+    collection do
+      get 'destroy_all'
+    end
+  end
 
   resources :tracks
 
