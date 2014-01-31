@@ -20,7 +20,7 @@ class Api::V1::RoutersController < ApplicationController
     @router = Router.new(router)
 
     if @router.save
-      respond_with @router
+      respond_with @router, status: 200
     else
       format.html { render action: 'new' }
       format.json { render json: @router.errors, status: :unprocessable_entity }
