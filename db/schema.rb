@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126170358) do
+ActiveRecord::Schema.define(version: 20140130180718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "routers", force: true do |t|
+    t.integer  "site_id"
+    t.decimal  "x"
+    t.decimal  "y"
+    t.decimal  "z"
+    t.string   "ssid"
+    t.string   "uid"
+    t.decimal  "power"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sites", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tracks", force: true do |t|
     t.integer  "user_id"
@@ -22,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140126170358) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
 
   create_table "users", force: true do |t|

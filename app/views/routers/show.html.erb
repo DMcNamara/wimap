@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @router.site_id %>
+</p>
+
+<p>
+  <strong>X:</strong>
+  <%= @router.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @router.y %>
+</p>
+
+<p>
+  <strong>Z:</strong>
+  <%= @router.z %>
+</p>
+
+<p>
+  <strong>Ssid:</strong>
+  <%= @router.ssid %>
+</p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @router.uid %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @router.power %>
+</p>
+
+<%= link_to 'Edit', edit_router_path(@router) %> |
+<%= link_to 'Back', routers_path %>

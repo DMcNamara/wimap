@@ -1,4 +1,8 @@
 Wimap::Application.routes.draw do
+  resources :sites
+
+  resources :routers
+
   resources :tracks
 
   devise_for :users
@@ -7,6 +11,12 @@ Wimap::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root :to => 'visitors#new'
+
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      resources :routers, :only => [:index, :create]
+    end # <-- v1 -->
+  end # <-- api -->
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
