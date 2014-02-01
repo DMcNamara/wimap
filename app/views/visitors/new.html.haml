@@ -23,12 +23,13 @@
     %p We are a group of Northeastern Students with backgrounds in engineering, science, and business. Our team is small but effective, with the expertise required for both frontend and backend development. WiMap is still too small to warrant expansion of the team or even official positions.
 
   .col-lg-3
-    .h4=link_to("Contact", root_path, {:anchor=>"contact", :name=>"contact"})
-    %p Questions or Comments?
-    %br= mail_to "wimap@wimapnav.com", "wimap@wimapnav.com", :target => "_blank"
-
-    %p
-    %br
+    
     .h4 Latest tweets from @WiMapNav
     %br
     %a.twitter-timeline{"data-widget-id" => "296693812376506368", :href => "https://twitter.com/WiMapNav"} Tweets by @WiMapNav
+
+    %p
+    %br
+    .h4=link_to("Contact", root_path, {:anchor=>"contact", :name=>"contact"})
+    %p Questions or Comments?
+    %br= mail_to "wimap@wimapnav.com", "wimap@wimapnav.com", :target => "_blank"
