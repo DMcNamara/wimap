@@ -9,8 +9,7 @@
   %body
     #main.container
       = render "layouts/header"
-      %p.notice= notice
-      %p.alert= alert
+      = render "layouts/messages"
       = yield
       .footer
         %p © WiMap 2014

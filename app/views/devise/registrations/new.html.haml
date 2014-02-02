@@ -5,6 +5,9 @@
     = f.input :email, :required => true, :autofocus => true
     = f.input :password, :required => true
     = f.input :password_confirmation, :required => true
+    / = f.input :roles_mask, collection: User.valid_roles, value_method: , as: :radio_buttons
+    = f.input :roles_mask, collection:[[User.mask_for(:super_admin), 'Super Admin'] ,[User.mask_for(:admin), 'Admin'],[User.mask_for(:user), 'User']], value_method: :first, label_method: :last, as: :radio_buttons
+    = f.association :site, label_method: :name, value_method: :id
   .form-actions
     = f.button :submit, "Sign up"
 = render "devise/shared/links"

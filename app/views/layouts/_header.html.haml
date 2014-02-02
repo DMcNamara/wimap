@@ -4,6 +4,10 @@
       %li= link_to("Home",root_path)
       %li= link_to("About",root_path+"#about",:anchor=>"about")
       %li= link_to("Contact",root_path+"#contact", :anchor=>"contact")
+      -if user_signed_in?
+        %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+      -else
+        %li= link_to 'Sign In', new_user_session_path
       %li= link_to('<i class="fa fa-twitter fa-2x"></i>'.html_safe, "https://twitter.com/WiMapNav", :target => "_blank")
       %li= link_to('<i class="fa fa-facebook-square fa-2x"></i>'.html_safe, "https://www.facebook.com/WiMapNav", :target => "_blank")
     %img(src="/assets/logothin128t.png")
