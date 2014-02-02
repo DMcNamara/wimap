@@ -1,3 +1,6 @@
+:javascript
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
 .jumbotron
   .h1 Indoor Navigation for the Modern Age
   %p.lead Where will it take you?
@@ -15,11 +18,18 @@
     %p WiMap is in the early planning and testing stages of our product development. With funding procured from contests of innovation and jumpstart/seed capital we are beginning development in earnest and hope to have a prototype fully functional within the next few weeks. Stay tuned in for progress updates and information!
     %img(src="/assets/about_cropped.png")
 
-    .h4 Who we are
+    %p
+    .h4 Who We Are
     %p We are a group of Northeastern Students with backgrounds in engineering, science, and business. Our team is small but effective, with the expertise required for both frontend and backend development. WiMap is still too small to warrant expansion of the team or even official positions.
 
   .col-lg-3
+    
+    .h4 Latest tweets from @WiMapNav
+    %br
+    %a.twitter-timeline{"data-widget-id" => "296693812376506368", :href => "https://twitter.com/WiMapNav"} Tweets by @WiMapNav
+
+    %p
+    %br
     .h4=link_to("Contact", root_path, {:anchor=>"contact", :name=>"contact"})
     %p Questions or Comments?
     %br= mail_to "wimap@wimapnav.com", "wimap@wimapnav.com", :target => "_blank"
-

@@ -23,6 +23,7 @@ Wimap::Application.routes.draw do
     end # <-- v1 -->
   end # <-- api -->
 
+  get "visitors/about"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
