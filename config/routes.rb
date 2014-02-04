@@ -23,7 +23,13 @@ Wimap::Application.routes.draw do
     end # <-- v1 -->
   end # <-- api -->
 
+  resources :users, :only => [:show, :index]
+
   get "visitors/about"
+
+
+
+  ######## EXAMPLES:
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

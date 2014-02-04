@@ -1,6 +1,6 @@
 class RoutersController < ApplicationController
   before_action :set_router, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  load_and_authorize_resource skip_load_resource only: [:create]
   # GET /routers
   # GET /routers.json
   def index

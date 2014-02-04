@@ -16,7 +16,7 @@
   %tbody
     - @routers.each do |router|
       %tr
-        %td= router.site_id
+        %td= Site.find_by_id(router.site_id).name
         %td= router.x
         %td= router.y
         %td= router.z

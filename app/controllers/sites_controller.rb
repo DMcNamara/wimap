@@ -1,6 +1,6 @@
 class SitesController < ApplicationController
   before_action :set_site, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  load_and_authorize_resource skip_load_resource only: [:create]
   # GET /sites
   # GET /sites.json
   def index

@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   before_action :set_track, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  load_and_authorize_resource skip_load_resource only: [:create]
   # acts_as_gmappable
   # GET /tracks
   # GET /tracks.json

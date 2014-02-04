@@ -1,0 +1,16 @@
+%h1 Users
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Email
+      %th Site
+      %th Role
+      %th
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= Site.find_by_id(user.site_id).name
+        %td= user.role_string
+        %td= link_to 'Show', user

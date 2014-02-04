@@ -9,8 +9,8 @@ class Ability
         can :manage, :all
       elsif user.has_role? :site_admin
         can :manage, :site_id => user.site_id
-      else
-        can :read, :all
+      # else
+      #   can :read, Visitor
       end
     #
     # The first argument to `can` is the action you are giving the user 
