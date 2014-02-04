@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong User:
+  = @track.user_id
+%p
+  %strong Latitude:
+  = @track.latitude
+%p
+  %strong Longitude:
+  = @track.longitude
+= link_to 'Edit', edit_track_path(@track)
+|
+\#{link_to 'Back', tracks_path}

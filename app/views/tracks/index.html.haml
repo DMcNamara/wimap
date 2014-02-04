@@ -1,0 +1,38 @@
+%h1 Listing tracks
+/ %div{:style => "width: 800px;"}
+/   #map{:style => "width: 1000px; height: 600px;"}
+/ %script{:src => "//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry", :type => "text/javascript"}
+/ %script{:src => "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", :type => "text/javascript"}
+/ :javascript
+/   handler = Gmaps.build('Google');
+/   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+/     markers = handler.addMarkers([
+/       {
+/         "lat": 42.3393332,
+/         "lng": -71.0941043,
+/         "infowindow": "User: b3167160-86b2-11e3-baa7-0800200c9a66"
+/       }
+/     ]);
+/     handler.bounds.extendWith(markers);
+/     handler.fitMapToBounds();
+/   });
+%table.table.table-striped
+  %thead
+    %tr
+      %th User
+      %th Latitude
+      %th Longitude
+      %th
+      %th
+      %th
+  %tbody
+    - @tracks.each do |track|
+      %tr
+        %td= track.user_id
+        %td= track.latitude
+        %td= track.longitude
+        %td= link_to 'Show', track
+        %td= link_to 'Edit', edit_track_path(track)
+        %td= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Track', new_track_path
