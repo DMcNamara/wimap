@@ -20,6 +20,7 @@ Wimap::Application.routes.draw do
     namespace :v1 do
       resources :routers, :only => [:index, :create]
       resources :tracks,  :only => [:index, :create]
+      resources :sites, :only => [:index, :create]
     end # <-- v1 -->
   end # <-- api -->
 
