@@ -1,4 +1,7 @@
 Wimap::Application.routes.draw do
+  get "distance_samples/index"
+  get "distance_samples/create"
+  get "distance_samples/destroy"
   resources :sites
 
   resources :routers do
