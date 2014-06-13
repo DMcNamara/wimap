@@ -41,6 +41,8 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'haml'
 gem 'haml-rails'
 gem 'role_model'
+gem 'groupdate'
+gem 'chartkick'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -16,12 +16,20 @@
 /     handler.bounds.extendWith(markers);
 /     handler.fitMapToBounds();
 /   });
+
+= javascript_include_tag "//www.google.com/jsapi", "chartkick"
+= area_chart Track.group_by_hour_of_day(:created_at).count
+
 %table.table.table-striped
   %thead
     %tr
       %th User
       %th Latitude
       %th Longitude
+      %th x
+      %th y
+      %th z
+      %th floor
       %th
       %th
       %th
@@ -31,6 +39,10 @@
         %td= track.user_id
         %td= track.latitude
         %td= track.longitude
+        %td= track.x
+        %td= track.y
+        %td= track.z
+        %td= track.floor
         %td= link_to 'Show', track
         %td= link_to 'Edit', edit_track_path(track)
         %td= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' }
