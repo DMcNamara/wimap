@@ -1,0 +1,2 @@
+module NavpointsHelper
+end
