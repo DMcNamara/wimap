@@ -22,4 +22,9 @@ class NavpointsController < ApplicationController
 
   def destroy_all
   end
+
+  private
+
+  def navpoint_params(params)
+    params.require(:site_id).permit(:navpoint)
 end

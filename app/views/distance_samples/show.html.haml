@@ -1,0 +1,21 @@
+%p#notice= notice
+%p
+  %strong Router Id:
+  = @distance_sample.router_id
+%p
+  %strong Router MAC:
+  = @distance_sample.router_mac
+%p
+  %strong Distance:
+  = @distance_sample.distance
+%p
+  %strong Power:
+  = @distance_sample.power
+  dBm
+%p
+  %strong Timestamp:
+  = @distance_sample.timestamp
+%p
+  %strong Set:
+  = @distance_sample.set_id
+\#{link_to 'Back', tracks_path}

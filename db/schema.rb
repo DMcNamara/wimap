@@ -11,10 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202211856) do
+ActiveRecord::Schema.define(version: 20140624005321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "distance_samples", force: true do |t|
+    t.integer  "router_id"
+    t.string   "router_mac"
+    t.float    "distance"
+    t.float    "power"
+    t.datetime "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "set_id"
+  end
+
+  create_table "messages", force: true do |t|
+    t.string   "title"
+    t.string   "icon"
+    t.string   "body"
+    t.time     "msg_time"
+    t.integer  "navpoint_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "navpoints", force: true do |t|
+    t.float    "x"
+    t.float    "y"
+    t.float    "z"
+    t.float    "range"
+    t.string   "title"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "routers", force: true do |t|
     t.integer  "site_id"
@@ -42,6 +74,13 @@ ActiveRecord::Schema.define(version: 20140202211856) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id"
+    t.float    "x"
+    t.float    "y"
+    t.float    "z"
+    t.float    "x_conf"
+    t.float    "y_conf"
+    t.float    "z_conf"
+    t.datetime "local_timestamp"
   end
 
   create_table "users", force: true do |t|

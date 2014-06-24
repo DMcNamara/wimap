@@ -1,2 +1,28 @@
-%h1 DistanceSamples#index
-%p Find me in app/views/distance_samples/index.html.haml
+%h1 Distance Samples
+- @set_hash.each_pair do |set, samples|
+  %p
+    Set
+    = set
+  %p
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Router Id
+          %th Router MAC
+          %th Distance
+          %th Power
+          %th Time
+          %th 
+          %th
+      %tbody
+        - samples.each do |sample|
+          %tr
+            %td= sample.router_id
+            %td= sample.router_mac
+            %td= sample.distance
+            %td= sample.power
+            %td= sample.time
+            %td= link_to 'Show', sample
+            %td= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }
+    %br/
+= link_to 'New Sample', new_sample_path

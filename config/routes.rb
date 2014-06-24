@@ -32,7 +32,7 @@ Wimap::Application.routes.draw do
   get "messages/destroy"
   get "messages/destroy_all"
   get "distance_samples/index"
-  get "distance_samples/create"
+  get "distance_samples/new"
   get "distance_samples/destroy"
   resources :sites
 
@@ -56,7 +56,9 @@ Wimap::Application.routes.draw do
       resources :routers, :only => [:index, :create]
       resources :tracks,  :only => [:index, :create]
       resources :sites, :only => [:index, :create]
+      resources :distance_samples, :only => [:index, :create]
       get 'sites/:site/routers' => 'sites#routers', as: :site
+      get 'routers/:router/samples' => 'routers#samples', as: :router
     end # <-- v1 -->
   end # <-- api -->
 
