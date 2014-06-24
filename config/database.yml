@@ -8,8 +8,8 @@ development:
   encoding: unicode
   database: wimap_dev
   pool: 5
-  username: merryman
-  password: merryman
+  username: wimap
+  password: wimap
   host: localhost
   port: 5432
 
