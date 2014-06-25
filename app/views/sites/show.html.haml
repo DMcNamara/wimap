@@ -2,6 +2,9 @@
 %p
   %strong Name:
   = @site.name
+%p
+  %strong Lat, Long
+  = "#{@site.latitude}, #{@site.longitude}"
 = link_to 'Edit', edit_site_path(@site)
 |
 \#{link_to 'Back', sites_path}
