@@ -24,11 +24,25 @@ class RoutersController < ApplicationController
   # POST /routers
   # POST /routers.json
   def create
-    @router = Router.new(router_params)
+    router_data = router_params
+    created = 0
+    total = 1
+    if router_data.kind_of?(Array)
+        total = router_data.size
+        router_data.each do | json |
+            if Router.new(json).save
+                ++created
+            end
+        end
+    else
+        if Router.new(router_data).save
+           created = 1
+        end
+    end
 
     respond_to do |format|
-      if @router.save
-        format.html { redirect_to @router, notice: 'Router was successfully created.' }
+      if created > 1
+        format.html { redirect_to @router, notice: '#{created}/#{total} Router#{created > 1 ? "s" : ""} successfully created.' }
         format.json { render action: 'show', status: :created, location: @router }
       else
         format.html { render action: 'new' }
@@ -68,6 +82,7 @@ class RoutersController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_router
       @router = Router.find(params[:id])
@@ -75,6 +90,6 @@ class RoutersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def router_params
-      params.require(:router).permit(:site_id, :x, :y, :z, :ssid, :uid, :power, :frequency)
+      params.require(:router).permit(:site_id, :x, :y, :z, :ssid, :uid, :power, :frequency) 
     end
 end

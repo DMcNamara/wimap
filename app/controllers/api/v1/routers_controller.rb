@@ -21,10 +21,23 @@ class Api::V1::RoutersController < Api::ParentApiController
   end
 
   def create
-    router = JSON.parse(params["router"])
-    @router = Router.new(router)
-
-    if @router.save
+    router_data = JSON.parse(params["router"])
+    count = 0
+    total = 1
+    if router_data.kind_of?(Array)
+      total = router_data.size
+      router_data.each do | router |
+        #router = JSON.parse(json_str)
+        if Router.new(router).save
+          ++count;
+        end
+      end
+    else
+      if Router.new(router_data).save
+        count = 1
+      end
+    end
+    if count > 0
       result = "ok"
       status = 200
     else
